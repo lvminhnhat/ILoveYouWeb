@@ -1,0 +1,56 @@
+/* styles.css */
+body {
+    background-color: white;
+    color: pink;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Đảm bảo hiệu ứng trái tim hiển thị toàn màn hình */
+}
+
+#music {
+    display: none; /* Ẩn thanh phát nhạc */
+}
+
+#lyrics {
+    font-size: 3em; /* Kích thước chữ lớn hơn */
+    line-height: 1.5em;
+}
+
+.heart {
+    position: fixed;
+    width: 1em;
+    height: 1em;
+    background: pink;
+    transform: rotate(-45deg);
+    animation: float 5s ease-in infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background: pink;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -0.5em;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -0.5em;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(-45deg);
+        opacity: 0;
+    }
+}
